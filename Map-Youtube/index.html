@@ -1,0 +1,85 @@
+<!doctype html>
+<!-- 
+The code for this style guide is modified version of the Cody House Style guide code. 
+Youtube video logic was taken from https://stackoverflow.com/questions/3694242/youtube-video-in-a-google-map-info-window
+json parsing logic taken from http://svennerberg.com/examples/multiple-markers-from-json/js/map.js
+-->
+<html>
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Merriweather' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/style-guide.css"> <!-- Resource style -->
+        <script type="text/javascript" src="JSON/locations.json"></script>
+        <title>Assignment Part 4</title>
+    </head>
+    <body>
+        <header> </header>
+        <main>
+            <h1>Assignment Part 4</h1>
+
+
+            <section class="cd-map">
+                <h2> Introduction </h2>
+
+                <p align="justify"> 
+                    Assignment Part 4 tasked students to implement either a CMS using wordpress and the REST API or a map video browser using the Google Maps API. It can be seen that we chose to implement the map video browser.
+                </p>
+
+                <h2> Method of Implementation </h2>
+
+                <p align="justify">
+                    To begin, the Cody house style guide, found at <a href="https://codyhouse.co/gem/css-style-guide-template">https://codyhouse.co/gem/css-style-guide-template</a>, was used as a foundation to form the style guide used for this project. This newly formed style guide then served as a foundation for the map video browser implementation. The following steps were then taken to implement the pin and video logic. <br><br> 
+                </p> 
+
+                <p align="justify">
+                    &bull; An array of JSON objects was constructed for each of the markers such that the position, location name, a Youtube video and the lat/lng were available for later use. The idea for the JSON list was taken from <a href="http://svennerberg.com/examples/multiple-markers-from-json/js/map.js">http://svennerberg.com/examples/multiple-markers-from-json/js/map.js</a> <br>
+                    &bull; The Google map was instansited and configured such that it opened in satellite view with the appropriate zoom and centered on an appropriate location. <br>
+                    &bull; A simple loop was written to parse each JSON object and display an appropriate marker/pin on the map for that location. This logic was also inspired from the code found at <a href="http://svennerberg.com/examples/multiple-markers-from-json/js/map.js">http://svennerberg.com/examples/multiple-markers-from-json/js/map.js</a> <br>
+                    &bull; To assist with the previous task, a function was constructed in order to display an info window with the associated Youtube video and location description upon the action of the user clicking on the pin. The function used was taken from <a href="https://stackoverflow.com/questions/3694242/youtube-video-in-a-google-map-info-window">https://stackoverflow.com/questions/3694242/youtube-video-in-a-google-map-info-window</a>  <br>
+                </p>
+            </section>
+
+            <section id=mapAPI class="cd-map"> 
+                <h2>Map Implementation</h2>
+                <div id="map" class="cd-box"></div>
+                <script>
+
+                    
+                    var Locations = JSON.parse(locations);
+                    alert("hello");
+                    var LNG = Locations[0].lng;
+                    var LAT = Locations[0].lat;
+                    
+
+                    function initMap() {
+                        var infoWindow = new google.maps.InfoWindow();
+                        var map = new google.maps.Map(document.getElementById('map'), { 
+                            zoom: 11, 
+                            center: {lat: LAT, lng: LNG}, 
+                            mapTypeId: google.maps.MapTypeId.SATELLITE
+                        });
+
+                        for(var i = 0; i < locations.length; i++) { 
+                            var marker = new google.maps.Marker({
+                                position: locations[i].pos,
+                                map: map 
+                            });
+
+                            (function(marker, data) {
+                                google.maps.event.addListener(marker, "click", function(e) {
+                                    infoWindow.setContent(data.description);
+                                    infoWindow.open(map, marker);
+                                });
+                            })(marker, locations[i]);
+                        }
+                    }
+                </script>
+                <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBse4ZyRDTUbEa9LnltFXBAGrcmpBf109w&callback=initMap">
+                </script>
+            </section>
+        </main>
+
+    </body>
+</html>
