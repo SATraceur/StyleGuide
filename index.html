@@ -1,0 +1,178 @@
+<!doctype html>
+<!-- The code for this style guide is modified version of the Cody House Style guide code. -->
+<html lang="en" class="no-js">
+<head> 
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+    
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Merriweather' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style-guide.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<title>Assignment Part 2 - Style Guide</title>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul class="cd-main-nav">
+				<li><a href="#branding">Branding</a></li>
+				<li><a href="#colors">Colors</a></li>
+				<li><a href="#typography">Typography</a></li>
+				<li><a href="#buttons">Buttons</a></li>
+				<li><a href="#icons">Icons</a></li>
+				<li><a href="#form">Form</a></li>
+                <li><a href="#mapAPI">Map</a></li>
+                <li><a href="#Header">Header</a></li>
+                <li><a href="#BlogComponent">Blog Components</a></li>
+                <li><a href="#NavBar">Navigation Bar</a></li> 
+			</ul> 
+		</nav>
+		
+		<a href="assets/assets-download-file.zip" class="cd-download"><span>Download assets</span></a>
+		<a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+	</header>
+
+	<main>
+		<h1>Assignment Part 2 - Style Guide</h1>
+
+		<section id="branding" class="cd-branding">
+			<h2>I. Branding</h2>
+			<ul>
+				<li class="cd-box test"><img src="assets/branding/TheBrand.svg" alt="Logo version 1" style="width:58%;height:58%"></li>
+				<li class="cd-box test"><img src="assets/branding/TheBrand2.svg" alt="Logo version 2" style="width:58%;height:58%;"></li>
+			</ul>
+			<ul></ul> 
+		</section>
+
+		<section id="colors" class="cd-colors">
+			<h2>II. Colors</h2>
+			<ul>
+				<li class="cd-box"><div class="cd-color-swatch"></div></li>
+				<li class="cd-box"><div class="cd-color-swatch"></div></li>
+				<li class="cd-box"><div class="cd-color-swatch"></div></li>
+				<li class="cd-box"><div class="cd-color-swatch"></div></li>
+			</ul>
+		</section>
+
+		<section id="typography" class="cd-typography">
+			<h2>III. Typography</h2>
+			<div class="cd-box">
+				<h1 style="color:darkviolet;">Main Headings, Sans Serif 40px, H1 </h1>
+				<p>This heading will be used for identifying individual segments such as FAQ, contact us, activities and services etc. Each page on the website will have a main heading identifying the page. These headings will be used for an aged care placement service company. Sans Serif was chosen as research identified that it was the clearest to read amoung older people. Since this website is for older clientelle, this font was deemed appropriate. <a href="#0">HyperLink</a>.</p>
+			</div>           
+            <div class="cd-box">
+				<h2 style="color:darkviolet;">Sub Headings, Sans Serif 30px, H2 </h2>
+				<p>The sub headings will be used for identifying individual segments of a page like clauses for legal services, individual activities and services etc. Each page on the website will have multiple sub headings for each part. Additional headings were not needed for the design we had planned. <a href="#0">HyperLink</a>. </p>
+			</div>
+            <div class="cd-box">
+                <h3>&bull; Example bulletpoints. Used for clauses etc.</h3>
+                <h3>&bull; Company logo (Southern Aged Care Placement Service) will use calligraphic421 font.</h3>
+                <h3>&bull; Tabs, components, forms and menus use sans serif font.</h3>
+                <h3>&bull; This style guide is heavily based on the Cody House Style guide.</h3>
+            </div>     
+		</section>
+
+		<section id="buttons" class="cd-buttons">
+			<h2>IV. Buttons</h2>
+			<div class="cd-box">
+				<button class="btn">Normal</button>
+				<button class="btn btn-alert">Alert</button>
+			</div>
+		</section>
+
+		<section id="icons" class="cd-icons">
+			<h2>V. Icons</h2>
+			<ul class="cd-box">
+				<li class="cd-icon-1"></li>
+				<li class="cd-icon-2"></li>
+				<li class="cd-icon-3"></li>
+				<li class="cd-icon-4"></li>
+				<li class="cd-icon-5"></li>
+				<li class="cd-icon-6"></li>
+				<li class="cd-icon-7"></li>
+				<li class="cd-icon-8"></li>
+                <li class="cd-icon-9"></li>
+			</ul>
+		</section>
+
+		<section id="form" class="cd-form">
+			<h2>VI. Forms</h2>
+			<div class="cd-box">
+				<form>
+					<fieldset>
+						<input type="text" placeholder="First name etc">
+						<input class="success" type="text" placeholder="Search">
+						<input class="alert" type="text" placeholder="Incorrect. Enter again.">
+					</fieldset>
+					<fieldset>
+						<div class="cd-input-wrapper">
+							<input type="radio" name="radioButton" id="radio1">
+	      					<label class="radio-label" for="radio1">Choice 1</label>
+      					</div>
+						<div class="cd-input-wrapper">
+							<input type="checkbox" id="checkbox1">
+	      					<label class="checkbox-label" for="checkbox1">Option 1</label>
+      					</div>
+						<div class="cd-input-wrapper cd-select">
+	      					<select name="select-this" id="select-this">
+					          <option value="0">Select</option>
+					          <option value="1">Option 1</option>
+					          <option value="2">Option 2</option>
+					          <option value="2">Option 3</option>
+					      	</select>
+				      	</div>
+					</fieldset>
+				</form>
+			</div>
+		</section>
+        
+        <section id=mapAPI class="cd-map"> 
+            <h2>VII. Map</h2>
+            <div id="map" class="cd-box"></div>
+            <script>
+              function initMap() {
+                var flinders = {lat: -35.0239725, lng: 138.5693896};
+                var map = new google.maps.Map(document.getElementById('map'), { 
+                    zoom: 15, 
+                    center: flinders 
+                });
+                var marker = new google.maps.Marker({ 
+                    position: flinders, 
+                    map: map 
+                });       
+              }
+            </script>
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBse4ZyRDTUbEa9LnltFXBAGrcmpBf109w&callback=initMap">
+            </script>
+        </section>
+        
+        <section id=Header class="cd-header">
+            <h2>VIII. Header</h2>
+            <ul><li class="cd-box"><img src="assets/Header.jpg"></li></ul>
+        </section>
+        
+         <section id=BlogComponent class="cd-blog">
+            <h2>IX. Blog Components</h2>
+            <ul>
+                <li class="cd-box"><img src="assets/Component.jpg"></li>
+                <li class="cd-box"><img src="assets/Component2.jpg"></li>
+            </ul>
+        </section>
+        
+        <section id=NavBar class="cd-nav">
+            <h2>X. Navigation Bar</h2>
+            <ul><li class="cd-box"><img src="assets/Nav.jpg"></li></ul>
+        </section>
+       
+	</main>
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>
